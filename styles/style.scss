@@ -1,10 +1,6 @@
 @import url("https://fonts.cdnfonts.com/css/source-sans-pro");
-
-$default-font-family: "HelveticaNeue", sans-serif;
-$font-family-source-sans-pro: "Source Sans Pro", sans-serif;
-$primary-color: #134880;
-$secondary-color: #484a4c;
-$bg-color: #dddddd;
+@import "variables";
+@import "mixins";
 
 * {
   margin: 0;
@@ -21,41 +17,41 @@ $bg-color: #dddddd;
   display: flex;
 }
 
-.content-1 {
+.header-empty {
   background-color: $bg-color;
   width: 301px;
   height: 100px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
-.content-2 {
+.header-with-text {
   background-color: $bg-color;
   width: 621px;
   height: 100px;
   margin-left: 19px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+
+  .text {
+    @include text-element-styles;
+    margin: 39px 0 0 80px;
+  }
 }
 
-.content-2 p {
-  font-family: $default-font-family;
-  color: white;
-  font-size: 15px;
-  line-height: 17.58px;
-  margin: 39px 0 0 80px;
-}
-
-.content-3 {
+.footer {
   background-color: $bg-color;
   width: 100%;
   height: 100px;
   position: absolute;
   bottom: 0;
-}
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 
-.content-3 p {
-  font-family: $default-font-family;
-  color: white;
-  font-size: 15px;
-  line-height: 17.58px;
-  margin: 41px 0 0 81px;
+  .text {
+    @include text-element-styles;
+    margin: 41px 0 0 81px;
+  }
 }
 
 .main-content {
@@ -67,41 +63,44 @@ $bg-color: #dddddd;
 
 .sliders {
   margin-right: 19px;
+  overflow: hidden;
+}
+
+.slider {
+  display: flex;
 }
 
 #top-row {
   width: 1230px;
   height: 200px;
   margin: 60px 0 10px 0;
-  display: flex;
 }
 
 #top-row .image img,
 #bottom-row .image img {
   height: 200px;
-  width: auto;
   border-radius: 5px;
   margin-right: 10px;
 }
 
-#bottom-row {
+.bottom-row-container {
   width: 1080px;
+  overflow: hidden;
+}
+
+#bottom-row {
   height: 200px;
-  display: flex;
 }
 
 .right-copy {
   width: 301px;
-  height: 296px;
-  margin-top: 60px;
+  margin: 60px 0 385px 0;
 }
 
 .right-copy .title {
   font-size: 32px;
   line-height: 37.5px;
   color: $primary-color;
-  height: 120px;
-  width: 300.93px;
   margin-bottom: 20px;
   letter-spacing: -0.2px;
   font-family: $font-family-source-sans-pro;
@@ -112,8 +111,6 @@ $bg-color: #dddddd;
   font-size: 18px;
   line-height: 26px;
   color: $secondary-color;
-  height: 156px;
-  width: 300.93px;
   letter-spacing: -0.2px;
   font-family: $font-family-source-sans-pro;
 }
@@ -125,35 +122,31 @@ $bg-color: #dddddd;
   position: absolute;
 }
 
-.arrows .left {
+.arrows button {
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
-  background-image: url("../assets/arrow-gray-left.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-}
-
-.arrows .right {
-  width: 60px;
-  height: 60px;
-  background-image: url("../assets/arrow-gray-right.png");
-  background-repeat: no-repeat;
-  background-position: center;
-  border: 1px solid #dddddd;
-  border-radius: 5px;
-}
-
-.arrows .left:hover {
-  background-image: url("../assets/arrow-blue-left.png");
   border: 1px solid $primary-color;
+  border-radius: 5px;
+  background-color: transparent;
   cursor: pointer;
 }
 
-.arrows .right:hover {
-  background-image: url("../assets/arrow-blue-right.png");
-  border: 1px solid $primary-color;
-  cursor: pointer;
+.arrows .hovered-left,
+.arrows .hovered-right {
+  display: none;
+}
+
+.arrows .left:hover .normal-left,
+.arrows .right:hover .normal-right {
+  display: none;
+}
+
+.arrows .left:hover .hovered-left,
+.arrows .right:hover .hovered-right {
+  display: inline;
+}
+
+.arrows button:hover {
+  border: 1px solid $bg-color;
 }
