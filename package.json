@@ -1,0 +1,25 @@
+{
+  "name": "factory-task",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "babel scripts -d scripts_transpiled"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/NikolinaS1/factory-task.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/NikolinaS1/factory-task/issues"
+  },
+  "homepage": "https://github.com/NikolinaS1/factory-task#readme",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-preset-env": "^1.7.0"
+  }
+}

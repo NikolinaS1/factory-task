@@ -127,7 +127,7 @@
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
-  border: 1px solid #134880;
+  border: 1px solid #dddddd;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
@@ -149,7 +149,7 @@
 }
 
 .arrows button:hover {
-  border: 1px solid #dddddd;
+  border: 1px solid #134880;
 }
 
 /*# sourceMappingURL=style.css.map */

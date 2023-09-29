@@ -126,7 +126,7 @@
   width: 60px;
   height: 60px;
   margin-bottom: 10px;
-  border: 1px solid $primary-color;
+  border: 1px solid $bg-color;
   border-radius: 5px;
   background-color: transparent;
   cursor: pointer;
@@ -148,5 +148,5 @@
 }
 
 .arrows button:hover {
-  border: 1px solid $bg-color;
+  border: 1px solid $primary-color;
 }
